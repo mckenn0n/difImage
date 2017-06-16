@@ -5,6 +5,7 @@ import sys
 from PIL import Image
 
 args = sys.argv
+upper_lim = 299
 
 if len(args) != 2:
 	print("Wrong number of Command Line arguments.")
@@ -18,7 +19,7 @@ for i in range(300):
 		image =Image.open("union.jpg."+str(i))
 	image = math.float32(image)
 	averageImage += image
-for i in range(0,299):
+for i in range(0,upper_lim):
 	if i == 0:
 		image1 = Image.open("union.jpg")
 		image2 =Image.open("union.jpg."+str(i+1))
@@ -40,13 +41,6 @@ for row in range(len(differenceImage)):
 		diff = differenceImage[row, col]
 		avg = averageImage[row, col]
 		new = math.mean(diff)/math .mean(avg)
-		#avg= differenceImage[row][col][0]
-		#avg+=differenceImage[row][col][1]
-		#avg+=differenceImage[row][col][2]
-		#avg2= averageImage[row][col][0]
-		#avg2+=averageImage[row][col][1]
-		#avg2+=averageImage[row][col][2]
-		#new = (avg)/(avg2)
 		if new > float(args[1]):
 			averageImage[row][col] = [255,0,0]
 differenceImage =differenceImage.clip(0,255)
