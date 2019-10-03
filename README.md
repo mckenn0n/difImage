@@ -7,4 +7,4 @@ Run python code:
 
     python3 main.py .4 300
 
-Find the differences in a set of images
+Highlight areas of of change in a set of images.
