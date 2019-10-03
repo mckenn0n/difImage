@@ -5,15 +5,15 @@ import sys
 from PIL import Image
 
 args = sys.argv
-upper_lim = 299
+upper_lim = int(args[2]) - 1
 
-if len(args) != 2:
+if len(args) != 3:
 	print("Wrong number of Command Line arguments.")
 	sys.exit()
 
 averageImage =0.0
 differenceImage=0.0
-for i in range(300):
+for i in range(int(args[2])):
 	image = Image.open("images/starbucks.jpg")
 	if i > 0:
 		image =Image.open("images/starbucks.jpg."+str(i))
@@ -34,8 +34,8 @@ for i in range(0,upper_lim):
 		image2 = math.float32(image2)
 		difference = math.absolute(image1-image2)
 		differenceImage+=difference
-averageImage=averageImage/300
-differenceImage=differenceImage/299
+averageImage=averageImage/int(args[2])
+differenceImage=differenceImage/upper_lim
 for row in range(len(differenceImage)):
 	for col in range(len(differenceImage[row])):
 		diff = differenceImage[row, col]
