@@ -1,4 +1,10 @@
 # difImage
+
+### Requires:
+* numpy
+* matplotlib
+* PIL
+
 Run shell script:
 
     ./pics.sh https://livecam-static.olemiss.edu/starbucks.jpg
