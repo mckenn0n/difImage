@@ -23,4 +23,4 @@ This script will download 300 images and save them to the image directory.
 
 Highlight areas of change in a set of images.
 
-main.py takes two command line arguments. The first being the diffence threshold that you want highlighted. 0 highlights any change 1 highlights very little change. The input can range from 0 to 1 a floats. The second is the number of images you want to find the differance in.
+main.py takes two command line arguments. The first being the diffence threshold that you want highlighted. 0 highlights any change, 1 highlights very little change. The input can range from 0 to 1 a floats. The second is the number of images you want to find the differance in.
